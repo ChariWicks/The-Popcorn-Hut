@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "896263433194",
+    "firebase_url": "https://the-popcorn-hut.firebaseio.com",
+    "project_id": "the-popcorn-hut",
+    "storage_bucket": "the-popcorn-hut.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:896263433194:android:3eab5e9805b96b5f",
+        "android_client_info": {
+          "package_name": "com.example.charitha.popcornhut"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "896263433194-kokftp0ncsojfnr8s4us95no6a8dr7l8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyATBayEPQLc9mdIiPZwazS522Mfy3dPvR0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
