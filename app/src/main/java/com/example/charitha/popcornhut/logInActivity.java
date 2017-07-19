@@ -9,6 +9,7 @@ import android.widget.Button;
 public class logInActivity extends AppCompatActivity {
 
     public Button signupBtn;
+    public Button loginBtn;
 
     public void init(){
 
@@ -27,11 +28,31 @@ public class logInActivity extends AppCompatActivity {
 
     }
 
+    public void initLogged(){
+
+        loginBtn = (Button)findViewById(R.id.button3);
+        loginBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent login = new Intent(logInActivity.this, button_page.class);
+
+                startActivity(login);
+
+
+            }
+        });
+
+    }
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_log_in);
 
         init();
+        initLogged();
     }
 }
