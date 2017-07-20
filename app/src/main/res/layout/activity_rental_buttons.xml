@@ -30,7 +30,7 @@
 
 
         <Button
-            android:id="@+id/buttonAddMember"
+            android:id="@+id/buttonAddRental"
             android:layout_width="@android:dimen/thumbnail_height"
             android:layout_height="60dp"
             android:layout_gravity="center_horizontal"
@@ -38,7 +38,7 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="40dp"
             android:background="@android:color/holo_red_light"
-            android:text="Add member"
+            android:text="Add rental"
             android:textColor="#ffffff" />
 
 
