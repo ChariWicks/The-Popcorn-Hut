@@ -29,17 +29,21 @@
         tools:layout_editor_absoluteY="8dp">
 
         <EditText
+            android:id="@+id/logEmail"
             android:layout_width="300dp"
             android:layout_height="60dp"
             android:layout_gravity="center"
-            android:layout_marginBottom="10dp"
             android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
             android:background="@drawable/edittextstyle"
-            android:hint="Username"
+            android:hint="Email"
             android:textColor="#fff"
-            android:textColorHint="#aaa" />
+            android:textColorHint="#aaa"
+            android:ems="10"
+            android:inputType="textEmailAddress" />
 
         <EditText
+            android:id="@+id/logPassword"
             android:layout_width="300dp"
             android:layout_height="60dp"
             android:layout_gravity="center"
