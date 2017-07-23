@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <EditText
+        android:id="@+id/editTextMovName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Movie name" />
+
+
+    <EditText
+        android:id="@+id/editTextMovLang"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Language" />
+
+
+    <EditText
+        android:id="@+id/editTextMovDura"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Duration" />
+
+
+    <EditText
+        android:id="@+id/editTextMovGen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Genre" />
+
+
+    <EditText
+        android:id="@+id/editTextMovYear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Year of Release" />
+
+
+    <EditText
+        android:id="@+id/editTextMovDire"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Director" />
+
+
+    <EditText
+        android:id="@+id/editTextMovMale"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Male Lead" />
+
+
+    <EditText
+        android:id="@+id/editTextMovFe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Female Lead" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/buttonUpdateMovie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Update Movie" />
+
+    </LinearLayout>
+</LinearLayout>
