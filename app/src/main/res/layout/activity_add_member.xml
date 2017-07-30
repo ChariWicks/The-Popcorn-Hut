@@ -29,17 +29,7 @@
         tools:layout_editor_absoluteY="8dp">
 
         <EditText
-            android:layout_width="300dp"
-            android:layout_height="45dp"
-            android:layout_gravity="center"
-            android:layout_marginBottom="0dp"
-            android:layout_marginLeft="20dp"
-            android:background="@drawable/edittextstyle"
-            android:hint="Member Id"
-            android:textColor="#fff"
-            android:textColorHint="#aaa" />
-
-        <EditText
+            android:id="@+id/txtFName"
             android:layout_width="300dp"
             android:layout_height="45dp"
             android:layout_gravity="center"
@@ -51,6 +41,7 @@
             android:textColorHint="#aaa" />
 
         <EditText
+            android:id="@+id/txtLName"
             android:layout_width="300dp"
             android:layout_height="45dp"
             android:layout_gravity="center"
@@ -62,6 +53,7 @@
             android:textColorHint="#aaa" />
 
         <EditText
+            android:id="@+id/txtTel"
             android:layout_width="300dp"
             android:layout_height="45dp"
             android:layout_gravity="center"
@@ -73,6 +65,7 @@
             android:textColorHint="#aaa" />
 
         <EditText
+            android:id="@+id/txtAdd"
             android:layout_width="300dp"
             android:layout_height="45dp"
             android:layout_gravity="center"
@@ -84,6 +77,7 @@
             android:textColorHint="#aaa" />
 
         <EditText
+            android:id="@+id/txtE"
             android:layout_width="300dp"
             android:layout_height="45dp"
             android:layout_gravity="center"

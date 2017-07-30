@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/editTextMemFName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="First Name" />
+
+
+    <EditText
+        android:id="@+id/editTextMemLName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Last Name" />
+
+
+    <EditText
+        android:id="@+id/editTextMemTel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Telephone number" />
+
+
+    <EditText
+        android:id="@+id/editTextMemAdd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Address" />
+
+
+    <EditText
+        android:id="@+id/editTextMemE"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Email address" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/buttonUpdateMember"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Update Member" />
+
+    </LinearLayout>
+
+</LinearLayout>
