@@ -23,10 +23,10 @@ import java.util.List;
 
 public class edit_member extends AppCompatActivity {
 
-    public static final String MOVIE_NAME = "com.example.charitha.popcornhut.moviename";
-    public static final String MOVIE_ID = "com.example.charitha.popcornhut.movieid";
+    public static final String MEMBER_NAME = "com.example.charitha.popcornhut.membername";
+    public static final String MEMBER_ID = "com.example.charitha.popcornhut.memberid";
 
-    DatabaseReference fbMmembers;
+    DatabaseReference fbMembers;
 
     List<Members> member;
 
@@ -37,9 +37,9 @@ public class edit_member extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_member);
 
-        fbMmembers = FirebaseDatabase.getInstance().getReference("members");
+        fbMembers = FirebaseDatabase.getInstance().getReference("members");
 
-        listViewMembers = (ListView)findViewById(R.id.listViewMovies);
+        listViewMembers = (ListView)findViewById(R.id.listViewMembers);
 
         member = new ArrayList<>();
 
@@ -87,7 +87,7 @@ public class edit_member extends AppCompatActivity {
 
         final Button buttonUpdMem = (Button)dViewMem.findViewById(R.id.buttonUpdateMember);
 
-        dBuilderMem.setTitle(memberFName + " " + memberFName);
+        dBuilderMem.setTitle(memberFName);
         final AlertDialog upDiaMem = dBuilderMem.create();
         upDiaMem.show();
 
@@ -116,7 +116,7 @@ public class edit_member extends AppCompatActivity {
 
         super.onStart();
 
-        fbMmembers.addValueEventListener(new ValueEventListener() {
+        fbMembers.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 

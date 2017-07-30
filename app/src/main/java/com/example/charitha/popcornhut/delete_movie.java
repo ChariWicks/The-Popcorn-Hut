@@ -86,10 +86,6 @@ public class delete_movie extends AppCompatActivity {
 
         dbReefDel.removeValue();
 
-       // DatabaseReference drTracks = FirebaseDatabase.getInstance().getReference("tracks").child(id);
-
-        //removing all tracks
-        //drTracks.removeValue();
         Toast.makeText(getApplicationContext(), "Movie details Deleted", Toast.LENGTH_LONG).show();
 
         return true;
