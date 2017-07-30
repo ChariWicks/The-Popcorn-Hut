@@ -10,7 +10,7 @@ public class activity_log_in extends AppCompatActivity {
 
     public Button signupBtn;
 
-    public void init(){
+   /* public void init(){
 
         signupBtn = (Button)findViewById(R.id.button4);
         signupBtn.setOnClickListener(new View.OnClickListener() {
@@ -24,7 +24,7 @@ public class activity_log_in extends AppCompatActivity {
             }
         });
 
-    }
+    }*/
 
 
 
@@ -36,7 +36,7 @@ public class activity_log_in extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_log_in);
-        init();
+        //init();
 
 
     }

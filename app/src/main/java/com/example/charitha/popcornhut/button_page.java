@@ -5,12 +5,30 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
-public class button_page extends AppCompatActivity {
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
+public class button_page extends AppCompatActivity implements View.OnClickListener {
 
     Button movieBtn;
     Button memberBtn;
     Button rentalBtn;
+
+    private FirebaseAuth btFirebase;
+    private Button btLogOut;
+    private TextView textWelcome;
+
+    @Override
+    public void onClick(View view) {
+
+        if(view == btLogOut){
+            btFirebase.signOut();
+            finish();
+            startActivity(new Intent(this, logInActivity.class));
+        }
+    }
 
     public void initMovie(){
 
@@ -64,6 +82,26 @@ public class button_page extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_button_page);
+
+        btFirebase = FirebaseAuth.getInstance();
+
+        if(btFirebase.getCurrentUser() == null){
+
+            finish();
+
+            startActivity(new Intent(this, logInActivity.class));
+
+        }
+
+        FirebaseUser currntUs = btFirebase.getCurrentUser();
+
+        btLogOut = (Button)findViewById(R.id.buttonSignOut);
+        textWelcome = (TextView)findViewById(R.id.txtLoggedMsg) ;
+
+        textWelcome.setText("                      Welcome " + currntUs.getEmail());
+
+        btLogOut.setOnClickListener(this);
+
 
         initMovie();
         initMember();

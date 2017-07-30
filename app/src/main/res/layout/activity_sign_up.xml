@@ -82,7 +82,7 @@
             android:textColorHint="#aaa"/>
 
         <Button
-            android:id="@+id/button4"
+            android:id="@+id/btnSignUp"
             android:layout_width="@android:dimen/thumbnail_width"
             android:layout_height="wrap_content"
             android:layout_gravity="center"

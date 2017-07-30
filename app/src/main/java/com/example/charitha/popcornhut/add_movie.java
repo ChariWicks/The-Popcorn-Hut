@@ -8,15 +8,18 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DataSnapshot;
 
-public class add_movie extends AppCompatActivity {
+public class add_movie extends AppCompatActivity implements View.OnClickListener {
 
     private DatabaseReference fbDatabaseMovie;
+    private FirebaseAuth fbDatabaseMovieAuth;
+
 
     EditText mName;
     EditText mGenre;
@@ -35,6 +38,7 @@ public class add_movie extends AppCompatActivity {
         setContentView(R.layout.activity_add_movie);
 
         fbDatabaseMovie = FirebaseDatabase.getInstance().getReference("movies");
+        fbDatabaseMovieAuth = FirebaseAuth.getInstance();
 
         mName = (EditText)findViewById(R.id.txtMovieName);
         mGenre = (EditText)findViewById(R.id.txtMovieGenre);
@@ -47,48 +51,56 @@ public class add_movie extends AppCompatActivity {
 
         mAddDB = (Button)findViewById(R.id.buttonAddMovieDB);
 
-        mAddDB.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                addMovie();
-
-            }
-        });
+        mAddDB.setOnClickListener(this);
     }
 
     private void addMovie(){
 
-        String movieName = mName.getText().toString().trim();
-        String movieGen = mGenre.getText().toString().trim();
-        String movieLang = mLang.getText().toString().trim();
-        String movieYear = mYear.getText().toString().trim();
-        String movieDue = mDuration.getText().toString().trim();
-        String movieDir = mDire.getText().toString().trim();
-        String movieMale = mMale.getText().toString().trim();
-        String movieFe = mFemale.getText().toString().trim();
+        if(fbDatabaseMovieAuth.getCurrentUser() != null){
 
-        if(!TextUtils.isEmpty(movieName) && !TextUtils.isEmpty(movieGen) && !TextUtils.isEmpty(movieLang) && !TextUtils.isEmpty(movieYear) && !TextUtils.isEmpty(movieDue) && !TextUtils.isEmpty(movieDir) && !TextUtils.isEmpty(movieMale) && !TextUtils.isEmpty(movieFe)){
+            String movieName = mName.getText().toString().trim();
+            String movieGen = mGenre.getText().toString().trim();
+            String movieLang = mLang.getText().toString().trim();
+            String movieYear = mYear.getText().toString().trim();
+            String movieDue = mDuration.getText().toString().trim();
+            String movieDir = mDire.getText().toString().trim();
+            String movieMale = mMale.getText().toString().trim();
+            String movieFe = mFemale.getText().toString().trim();
 
-            String movId = fbDatabaseMovie.push().getKey();
+            if(!TextUtils.isEmpty(movieName) && !TextUtils.isEmpty(movieGen) && !TextUtils.isEmpty(movieLang) && !TextUtils.isEmpty(movieYear) && !TextUtils.isEmpty(movieDue) && !TextUtils.isEmpty(movieDir) && !TextUtils.isEmpty(movieMale) && !TextUtils.isEmpty(movieFe)){
 
-            Movies movie = new Movies(movId, movieName, movieGen, movieYear, movieDue, movieLang, movieDir, movieMale, movieFe);
+                String movId = fbDatabaseMovie.push().getKey();
 
-            fbDatabaseMovie.child(movId).setValue(movie);
+                Movies movie = new Movies(movId, movieName, movieGen, movieYear, movieDue, movieLang, movieDir, movieMale, movieFe);
 
-            mName.setText("");
-            mGenre.setText("");
-            mLang.setText("");
-            mYear.setText("");
-            mDuration.setText("");
-            mDire.setText("");
-            mMale.setText("");
-            mFemale.setText("");
+                fbDatabaseMovie.child(movId).setValue(movie);
 
-            Toast.makeText(this, "Movie is added to the Database", Toast.LENGTH_LONG).show();
+                mName.setText("");
+                mGenre.setText("");
+                mLang.setText("");
+                mYear.setText("");
+                mDuration.setText("");
+                mDire.setText("");
+                mMale.setText("");
+                mFemale.setText("");
+
+                Toast.makeText(this, "Movie is added to the Database", Toast.LENGTH_LONG).show();
+            }
+            else {
+                Toast.makeText(this, "Please fill all the fields", Toast.LENGTH_LONG).show();
+            }
+
         }
-        else {
-            Toast.makeText(this, "Please fill all the fields", Toast.LENGTH_LONG).show();
-        }
+
+
+
+    }
+
+    @Override
+    public void onClick(View v) {
+
+
+        addMovie();
+
     }
 }
